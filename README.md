@@ -1,6 +1,8 @@
 # Cshell
 ## An Interactive user defined bash-like shell
 
+[![asciicast](https://asciinema.org/a/B8a2aidyOMy2VvAvyRPVjuONo.svg)](https://asciinema.org/a/B8a2aidyOMy2VvAvyRPVjuONo)
+
 ## About the shell
 **Cshell** is an interactive user defined bash-like shell that supports semi-colon separated list of commands.
 
