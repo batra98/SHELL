@@ -27,7 +27,7 @@ void execute_cd(int number)
     //printf("%d\n",argcount);
     if( command[number].argcount == 1 )
     {
-    	printf("in 1\n");
+    	//printf("in 1\n");
         chdir(home);
     }
     else

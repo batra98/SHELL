@@ -19,6 +19,12 @@ void execute_echo(int number)
 	}
 	else
 	{
+		environment=getenv(command[number].argval[1]);
+		if(environment!=NULL)
+		{
+			printf("%s\n",environment);
+			return;
+		}
 
 
 		int len1 = strlen(command[number].argval[command[number].argcount-1]);
@@ -29,6 +35,8 @@ void execute_echo(int number)
 			{			
 				if(flag_start==1)
 				{
+					if(echo_arr[i]=='\'')
+						break;
 					printf("%c",echo_arr[i]);
 				}
 				if(echo_arr[i]=='\'')
@@ -38,13 +46,20 @@ void execute_echo(int number)
 			}
 			printf("\n");
 		}
-		else if(command[number].argval[1][0] == '\"' && command[number].argval[command[number].argcount-1][len1-1] == '\"')
+		else if(command[number].argval[1][0] == '\"')
 		{
+			//printf("in");
+			//printf("\"");
 			for(int i=0;i<strlen(echo_arr)-1;i++)
-			{			
+			{	
+				//printf("%d",flag_start);		
 				if(flag_start==1)
 				{
+					if(echo_arr[i]=='\"')
+						break;
 					printf("%c",echo_arr[i]);
+					//printf("%c\n",echo_arr[i]);
+					
 				}
 				if(echo_arr[i]=='\"')
 				{

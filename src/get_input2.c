@@ -36,40 +36,11 @@ void getinput_2()
 	while(curr!=NULL)
 	{
 		//printf("%s\n",curr);
-		strcpy(command[i].full,curr);
+		strcpy(full_command[i],curr);
 		i++;
 		curr = strtok(NULL,";\n");
 
-	}
-
-	for(int k=0;k<i;k++)
-	{
-		//printf("%s\n",command[k].full);
-		curr=strtok(command[k].full," \t\n");
-		while(curr!=NULL)
-		{
-			//printf("%s\n",curr);
-			strcpy(command[k].argval[j++],curr);
-			//printf("%s\n",command[k].argval[j-1]);
-			curr=strtok(NULL," \t\n");
-		}
-		command[k].argcount=j;
-		j=0;
-
-	}
-
-	for(int k=0;k<i;k++)
-	{
-		//printf("%d\n",command[k].argcount);
-		for(int g=0;g<command[k].argcount;g++)
-		{
-			//printf("%s\n",command[k].argval[g]);
-
-		}
-		
-		//free(command[k].argval);
-
-	}
+	}	
 	comm_size=i;
 
 	/*for(int k=0;k<i;k++)
